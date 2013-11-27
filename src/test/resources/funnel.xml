@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engine>
+    <channel id="channel_1">
+        <input id="db1" provider="com.osteching.funnel.input.db.DbInput">
+            <!-- (db|mq) -->
+            <datasource id="mysql" type="db"
+                provider="com.osteching.funnel.input.datasource.MysqlDataSource">
+                <url>jdbc:mysql://192.168.0.11:3306/test?useUnicode=true&amp;characterEncoding=utf8</url>
+                <user>demo</user>
+                <password>password</password>
+            </datasource>
+            <cfg file="src/test/resources/db_test/main.xml" />
+        </input>
+
+        <pipeline>
+            <pipe id="pipe1" provider="com.osteching.funnel.pipe.impl.LogPipe" />
+        </pipeline>
+
+        <output><!-- (file|mq) -->
+            <export id="output1" type="file"
+                provider="com.osteching.funnel.output.impl.FileOutputImpl">
+                <url>src/test/resources/test</url>
+                <buffer>100</buffer>
+            </export>
+        </output>
+
+        <watermark id="watermark" file="src/test/resources/watermark" />
+
+        <queue id="queuesize" size="1000000"
+            provider="java.util.concurrent.ArrayBlockingQueue" />
+    </channel>
+</engine>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engine>
+    <channel id="channel_1">
+        <input id="file_input" provider="com.osteching.funnel.plugin.input.FileInput">
+            <!-- (db|mq) -->
+            <datasource id="mysql" type="db"
+                provider="com.osteching.funnel.input.datasource.MysqlDataSource">
+                <url>/home/ju/workspace/funnel/src/test/resources/funnel.xml</url>
+                <user/>
+                <password/>
+            </datasource>
+            <cfg file="src/test/resources/db_test/main.xml"/>
+        </input>
+
+        <pipeline>
+            <pipe id="pipe0" provider="com.osteching.funnel.plugin.pipe.TestPipe"/>
+            <pipe id="pipe1" provider="com.osteching.funnel.pipe.impl.LogPipe"/>
+        </pipeline>
+
+        <output><!-- (file|mq) -->
+            <export id="file_output" type="file"
+                provider="com.osteching.funnel.plugin.output.ConsoleOutput">
+                <url/>
+                <buffer/>
+            </export>
+        </output>
+
+        <watermark id="watermark" file="src/test/resources/watermark"/>
+
+        <queue id="queuesize" size="1000000"
+            provider="java.util.concurrent.ArrayBlockingQueue"/>
+    </channel>
+</engine>

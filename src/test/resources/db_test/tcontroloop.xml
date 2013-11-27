@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node name="tcontrloop" >
+    <profile query_sql="select eventid, type, level, userid, planid, groupid, unitid, keywid, ustate as ustat, ushifenstatid, sfstattransfer, utype, balance, dummyaccount, planstate, budgetover, mondayscheme, tuesdayscheme, wednesdayscheme, thursdayscheme, fridayscheme, saturdayscheme, sundayscheme, groupstate, attrid, grouptype, targettype, qtalivedays as validtime, qtkeywid as winfoid, qtwordid as wordid, ctwordid, vtid, pid, cid, itid, iid, itype, exc_itid, pack_id, sub_pack_id, wpk_id, apr_id, gpid, price  from BD_Output.bdevent where eventid &gt; ? order by eventid limit ? " db_connect="db_connection" read_num="10000" sleep_sec="2" start_id="0" need_stop="0" idx="0" />
+    <event_meta_data>
+        <column name="eventid" type="unsigned long long" />
+        <column name="type" type="int" />
+        <column name="level" type="int" />
+        <column name="userid" type="int" />
+        <column name="planid" type="int" />
+        <column name="groupid" type="long long" />
+        <column name="unitid" type="long long" />
+        <column name="keywid" type="long long" />
+        <column name="ustat" type="int" />
+        <column name="ushifenstatid" type="int" />
+        <column name="sfstattransfer" type="int" />
+        <column name="utype" type="int" />
+        <column name="balance" type="int" />
+        <column name="dummyaccount" type="int" />
+        <column name="planstate" type="int" />
+        <column name="budgetover" type="int" />
+        <column name="mondayscheme" type="int" />
+        <column name="tuesdayscheme" type="int" />
+        <column name="wednesdayscheme" type="int" />
+        <column name="thursdayscheme" type="int" />
+        <column name="fridayscheme" type="int" />
+        <column name="saturdayscheme" type="int" />
+        <column name="sundayscheme" type="int" />
+        <column name="groupstate" type="int" />
+        <column name="attrid" type="int" />
+        <column name="grouptype" type="int" />
+        <column name="targettype" type="unsigned int" />
+        <column name="validtime" type="unsigned int" />
+        <column name="winfoid" type="long long" />
+        <column name="wordid" type="unsigned int" />
+        <column name="ctwordid" type="unsigned int" />
+        <column name="vtid" type="long long" />
+        <column name="pid" type="long long" />
+        <column name="cid" type="long long" />
+        <column name="itid" type="long long" />
+        <column name="iid" type="int" />
+        <column name="itype" type="int" />
+        <column name="exc_itid" type="long long" />
+        <column name="pack_id" type="long long" />
+        <column name="sub_pack_id" type="long long" />
+        <column name="wpk_id" type="long long" />
+        <column name="apr_id" type="long long" />
+        <column name="gpid" type="long long" />
+        <column name="price" type="int" />
+    </event_meta_data>
+</node>

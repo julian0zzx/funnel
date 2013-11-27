@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node name="data_reader_event_1" level="2">
+    <field idx="0">
+        <eval>eventid</eval><!-- (basic|expr|ternary|sql) -->
+    </field>
+    <field idx="1">
+        <eval>type</eval>
+    </field>
+    <field idx="2">
+        <eval>level</eval>
+    </field>
+    <field idx="3">
+        <eval>planid</eval>
+    </field>
+    <field idx="4">
+        <eval>userid</eval>
+    </field>
+    <field idx="5">
+        <eval>planstate</eval>
+    </field>
+    <field idx="6">
+        <eval>budgetover</eval>
+    </field>
+</node>

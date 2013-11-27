@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node name="data_reader_event_1" level="1">
+    <field idx="0">
+        <eval>eventid</eval><!-- (basic|expr|ternary|sql) -->
+    </field>
+    <field idx="1">
+        <eval>type</eval>
+    </field>
+    <field idx="2">
+        <eval>level</eval>
+    </field>
+    <field idx="3">
+        <eval>userid</eval>
+    </field>
+    <field idx="4">
+        <eval type="ternary"><!-- (basic|expr|ternary|sql) -->
+            (((0==ustat)&amp;&amp;((2==ushifenstatid)||(3==ushifenstatid)||(6==ushifenstatid))&amp;&amp;(0==sfstattransfer))
+            &amp;&amp;(((0==utype)&amp;&amp;(balance>0))||((1==utype)&amp;&amp;(dummyaccount>0))))?0:1
+        </eval>
+    </field>
+</node>
